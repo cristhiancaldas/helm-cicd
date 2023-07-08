@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: {{ .Values.Namespacename }}
+  name: {{ .Values.Deploymentname }}
+  labels:
+     {{ - toYaml .Values.labelsDeployment | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+       {{ - toYaml .Values.matchLabels | nindent 6 }}
+  replicas: {{ .Values.replicas }}
+  template:
+    metadata:
+      labels:
+         {{ - toYaml .Values.labels | nindent 8 }}
+    spec:
+      containers:
+      - name: {{ .Values.containers.name }}
+        image: {{ .Values.containers.image }}
+        ports:
+        - containerPort: 8080
