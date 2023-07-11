@@ -22,9 +22,9 @@ node {
                             git config --global user.name "ccargocd"
                             git config --global user.email "c.caldas.m@gmail.com"
                            
-                            cat values.yml
+                            cat values.yaml
                             yq eval '.containers.tag = ${DOCKERTAG}' -i values.yaml
-                            cat values.yml
+                            cat values.yaml
                             git add .
                             git commit -m 'By Jenkins Job changemanifest: ${DOCKERTAG}'
                             git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/cristhiancaldas/helm-cicd.git HEAD:main
