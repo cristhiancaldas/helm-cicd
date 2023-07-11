@@ -3,26 +3,18 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
-
 Namespacename: app-backend
-
 Deploymentname: deployment-app
-
 Servicename: service-app
-
 labelsDeployment:
   app.kubernetes.io/name: backend
-
 labels:
   app.kubernetes.io/name: backend
-
 matchLabels:
   app.kubernetes.io/name: backend
-
 selector:
   app.kubernetes.io/name: backend
-
 containers:
   name: app-backen-container
   image: crist/argocd-jenkins
-  tag: 26
+  tag: 32
