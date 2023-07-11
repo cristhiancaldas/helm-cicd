@@ -24,4 +24,5 @@ selector:
 
 containers:
   name: app-backen-container
-  image: crist/argocd-jenkins:26
+  image: crist/argocd-jenkins
+  tag: 26
