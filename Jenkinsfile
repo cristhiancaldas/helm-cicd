@@ -27,7 +27,7 @@ node {
                             cat values.yml
                             git add .
                             git commit -m 'By Jenkins Job changemanifest: ${DOCKERTAG}'
-                            git push https://$GIT_CREDS_PSW@github.com/cristhiancaldas/helm-cicd.git HEAD:main
+                            git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/cristhiancaldas/helm-cicd.git HEAD:main
                        """
       }
     }
