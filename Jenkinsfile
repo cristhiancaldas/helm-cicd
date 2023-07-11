@@ -16,9 +16,9 @@ node {
                     withCredentials([usernamePassword(credentialsId: 'github-token', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                       
                     sh """
-                            wget https://github.com/mikefarah/yq/releases/download/v4.9.6/yq_linux_amd64.tar.gz
-                            tar xvf yq_linux_amd64.tar.gz
-                            mv yq_linux_amd64 /usr/bin/yq
+                            sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+                            sudo chmod a+x /usr/local/bin/yq
+                            yq --version
                             git config --global user.name "ccargocd"
                             git config --global user.email "c.caldas.m@gmail.com"
                            
