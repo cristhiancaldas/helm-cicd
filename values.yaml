@@ -13,7 +13,7 @@ labels:
 matchLabels:
   app.kubernetes.io/name: backend
 selector:
-  name: backend
+  pp.kubernetes.io/name: backend
 containers:
   name: app-backen-container
   image: crist/argocd-jenkins
