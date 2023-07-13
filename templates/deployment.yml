@@ -9,7 +9,7 @@ spec:
   selector:
     matchLabels:
        {{- toYaml .Values.matchLabels | nindent 6 }}
-  replicas: {{ .Values.replicas }}
+  replicas: {{ .Values.replicaCount }}
   template:
     metadata:
       labels:
